@@ -145,6 +145,82 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void test23() {
+        Radio radio = new Radio();
+
+        int initialVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(0, initialVolume);
+
+        radio.increaseVolume();
+
+        int afterIncrease = radio.getCurrentVolume();
+        Assertions.assertEquals(1, afterIncrease);
+    }
+
+    @Test
+    public void test24() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(100);
+
+        int initialVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(100, initialVolume);
+
+        radio.increaseVolume();
+        radio.increaseVolume();
+
+        int afterIncrease = radio.getCurrentVolume();
+        Assertions.assertEquals(100, afterIncrease);
+    }
+
+    @Test
+    public void test25() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(0);
+
+        int initialVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(0, initialVolume);
+
+        radio.decreaseVolume();
+        radio.decreaseVolume();
+
+        int afterDecrease = radio.getCurrentVolume();
+        Assertions.assertEquals(0, afterDecrease);
+    }
+    @Test
+    public void test26() {
+        Radio radio = new Radio();
+
+
+        radio.setCurrentVolume(50);
+
+        int initialVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(50, initialVolume);
+
+        radio.increaseVolume();
+
+        int afterIncrease = radio.getCurrentVolume();
+        Assertions.assertEquals(51, afterIncrease);
+    }
+
+    @Test
+    public void test27() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(50);
+
+        int initialVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(50, initialVolume);
+
+        radio.decreaseVolume();
+
+        int afterDecrease = radio.getCurrentVolume();
+        Assertions.assertEquals(49, afterDecrease);
+    }
+
+
 
 
 
